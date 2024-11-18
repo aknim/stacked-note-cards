@@ -16,8 +16,8 @@
 
         .card-container {
             position: relative;
-            width: 300px;
-            height: 400px;
+            width: 320px;
+            height: 600px;
             padding: 20px;
             background-color: #fafafa;
             border-radius: 12px;
@@ -42,7 +42,7 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 10px;
-            transition: transform 0.2s;
+            transition: transform 0.2s, z-index 0.2s;
         }
 
         .note-card:hover {
@@ -50,7 +50,22 @@
             cursor: pointer;
         }
 
-        .note-card .note-header {
+        .note-card .note-tab {
+            position: absolute;
+            top: -15px;
+            left: 0;
+            width: 50px;
+            height: 20px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 12px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px 4px 0 0;
+        }
+        /* .note-card .note-header {
             background-color: #007bff;
             height: 25px;
             border-radius: 8px 8px 0 0;
@@ -60,9 +75,10 @@
             justify-content: center;
             color: #fff;
             font-weight: bold;
-        }
+        } */
 
         .note-card .note-body {
+            margin-top: 10px;
             color: #333;
             line-height: 1.5;
         }
@@ -114,7 +130,7 @@
 <body>
     <div class="card-container">
         <div class="note-card" style="z-index: 3;">
-            <div class="note-header">Sun</div>
+            <div class="note-tab">Sun</div>
             <div class="note-body">
                 <p> Tasks & notes for Sunday.</p>
                 <p> 1. Plan week </p>
@@ -122,7 +138,7 @@
             </div>
         </div>
         <div class="note-card">
-            <div class="note-header">Mon</div>
+            <div class="note-tab">Mon</div>
             <div class="note-body">
                 <p> Tasks and notes for Monday.</p>
                 <p> 1. Work on project </p>
@@ -130,7 +146,7 @@
             </div>
         </div>
         <div class="note-card">
-            <div class="note-header">Tue</div>
+            <div class="note-tab">Tue</div>
             <div class="note-body">
                 <p>Tasks and notes for Tuesday.</p>
                 <p> 1. Code review </p>
@@ -138,7 +154,7 @@
             </div>
         </div>
         <div class="note-card">
-            <div class="note-header">Wed</div>
+            <div class="note-tab">Wed</div>
             <div class="note-body">
                 <p> Tasks and notes for Wednesday.</p>
                 <p> 1. Prepare presentation </p>
@@ -146,7 +162,7 @@
             </div>
         </div>
         <div class="note-card">
-            <div class="note-header">Thu</div>
+            <div class="note-tab">Thu</div>
             <div class="note-body">
                 <p>Tasks and notes for Thursday.</p>
                 <p> 1. Client call</p>
@@ -154,7 +170,7 @@
             </div>
         </div>
         <div class="note-card">
-            <div class="note-header">Fri</div>
+            <div class="note-tab">Fri</div>
             <div class="note-body">
                 <p>Tasks and notes for Friday.</p>
                 <p>1. Finish tasks</p>
@@ -162,7 +178,7 @@
             </div>
         </div>
         <div class="note-card">
-            <div class="note-header">Sat</div>
+            <div class="note-tab">Sat</div>
             <div class="note-body">
                 <p>Tasks and notes for Saturday</p>
                 <p> 1. Relax and recharge</p>
