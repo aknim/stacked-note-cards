@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=width-device-width, initial-scale=1.0">
+    <title> Stacked Note Cards</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .card-container {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            padding: 20px;
+            background-color: #fafafa;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .note-card {
+            position: absolute;
+            width: 100%;
+            height: 100px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            transition: transform 0.2s;
+        }
+
+        .note-card:hover {
+            transform: scale(1.03);
+            cursor: pointer;
+        }
+
+        .note-card .note-header {
+            background-color: #007bff;
+            height: 20px;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 5px;
+        }
+
+        .note-card .note-body {
+            color: #333;
+        }
+
+        /* Position each card slightly lower than the one before */
+        .note-card:nth-child(2) {
+            top: 40px;
+            z-index: 2;
+        }
+
+        .note-card:nth-child(3){
+            top: 80px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="note-card" style="z-index: 3;">
+            <div class="note-header"></div>
+            <div class="note-body">
+                <p> Note Card 1: Main task list or summary.</p>
+            </div>
+        </div>
+        <div class="note-card">
+            <div class="note-header"></div>
+            <div class="note-body">
+                <p> Note Card 2: Details of a secondary task. </p>
+            </div>
+        </div>
+        <div class="note-card">
+            <div clas="note-header"></div>
+            <div class="note-body">
+                <p> Note Card 3: Notes for later review. </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
