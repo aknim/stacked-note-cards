@@ -130,7 +130,7 @@
             </div>
         </div>
         <div class="note-card">
-            <div clas="note-header">Tue</div>
+            <div class="note-header">Tue</div>
             <div class="note-body">
                 <p>Tasks and notes for Tuesday.</p>
                 <p> 1. Code review </p>
@@ -170,5 +170,17 @@
             </div>
         </div>
     </div>
+    <script>
+        document.querySelectorAll('.note-card').forEach((card, index) => {
+            card.addEventListener('click', () => {
+                // Reset z-index for all cards
+                document.querySelectorAll('.note-card').forEach((c) => c.style.zIndex = 0);
+
+                // Set the clicked card to the highest z-index
+                card.style.zIndex = 8;
+                console.log("hi");
+            })
+        })
+    </script>
 </body>
 </html>
