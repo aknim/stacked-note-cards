@@ -208,15 +208,19 @@
         noteBody = document.querySelectorAll('.note-body');
         displayCard = noteCards[7];
         displayCard.style.display = 'none';
-
+        displayCard.contentEditable = 'true';
+        selectedIndex = -1;
 
         noteCards.forEach((card, index) => {
-            card.addEventListener('click', () => {
-                noteCards.forEach(nc => nc.style.display = 'block')
-                noteCards[index].style.display = 'none';
+            card.addEventListener('dblclick', () => {
+                if(selectedIndex>=0 && selectedIndex<=6){
+                    noteCards[selectedIndex].style.display = 'block';
+                }
                 displayCard.innerHTML = noteCards[index].innerHTML;
                 displayCard.childNodes[1].style.backgroundColor = '#28a745';
-
+                displayCard.style.display = 'block';
+                selectedIndex = index;
+                noteCards[index].style.display = 'none';
             })
         })
     </script>
