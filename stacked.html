@@ -37,7 +37,7 @@
         .note-card {
             position: absolute;
             width: 260px;
-            height: 150px;
+            height: 300px;
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -202,8 +202,6 @@
     </div>
     <script>
         noteCards = document.querySelectorAll('.note-card');
-        original = [];
-        noteCards.forEach(nc => original.push(nc.innerHTML))
         noteTabs = document.querySelectorAll('.note-tab');
         noteBody = document.querySelectorAll('.note-body');
         displayCard = noteCards[7];
@@ -214,6 +212,8 @@
         noteCards.forEach((card, index) => {
             card.addEventListener('dblclick', () => {
                 if(selectedIndex>=0 && selectedIndex<=6){
+                    noteCards[selectedIndex].innerHTML = displayCard.innerHTML;
+                    noteCards[selectedIndex].childNodes[1].style.backgroundColor="#007bff";
                     noteCards[selectedIndex].style.display = 'block';
                 }
                 displayCard.innerHTML = noteCards[index].innerHTML;
