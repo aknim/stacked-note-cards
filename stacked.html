@@ -218,6 +218,7 @@
                 }
                 displayCard.innerHTML = noteCards[index].innerHTML;
                 displayCard.childNodes[1].style.backgroundColor = '#28a745';
+                displayCard.childNodes[1].contentEditable = 'false';
                 displayCard.style.display = 'block';
                 selectedIndex = index;
                 noteCards[index].style.display = 'none';
